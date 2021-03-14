@@ -4,11 +4,13 @@
 
 {% block content %}
 <div class="book-detail">
-  <h2><a href="">{{ book.title }}</a></h2>
+  {% if book.cover %}
+    <img class="bookcover" src="{{ book.cover.url }}" alt="{{ book.title }}">
+  {% endif %}
   <p>Автор: {{ book.author }}</p>
   <p>Цена: {{ book.price }}</p>
   <div>
-    <h3>Обзоры</h3>
+    <h3>Обзоры и отзывы.</h3>
     <ul>
       {% for review in book.reviews.all %}
       <li>{{ review.review }} ({{ review.author }})</li>
