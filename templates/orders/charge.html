@@ -1,0 +1,8 @@
+{% extends '_base.html' %}
+
+{% block title %}Поручение{% endblock title %}
+
+{% block content%}
+<h2>Спасибо за ваш заказ! Теперь у вас есть доступ к
+<a href="{% url 'book_list' %}">Все книги</a>.</h2>
+{% endblock content %}
